@@ -12,3 +12,23 @@ int maxLength = 3; // максимальная длинна искомого с�
 Console.WriteLine("Исходный текст:");
 Console.WriteLine(text);
 Console.WriteLine();
+
+/// <summary>
+/// метод заменяет одни знаки другими
+/// </summary>
+/// <param name="text">заданный текст</param>
+/// <param name="oldValue">запятая</param>
+/// <param name="newValue">пробел</param>
+/// <returns></returns>
+string Replase(string text, char oldValue, char newValue)
+{
+    string result = String.Empty;
+    int length = text.Length;
+    for (int i = 0; i < length; i++)
+    {
+        if (text[i] == oldValue) result = result + $"{newValue}";
+        else result = result + $"{text[i]}";
+    }
+    return result;
+}
+string newText = Replase(text, ',' , ' '  );
