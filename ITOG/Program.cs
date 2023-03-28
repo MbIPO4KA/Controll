@@ -32,3 +32,20 @@ string Replase(string text, char oldValue, char newValue)
     return result;
 }
 string newText = Replase(text, ',' , ' '  );
+
+/// <summary>
+/// Преобразование строк в массив 
+/// </summary>
+/// <param name="str">Текст</param>
+/// <returns>Массив слов</returns>
+string[] RemoveSignsText(string str) // загружаем строку
+{   
+    string[] RemoveSigns = { ".", "!", ","};  // удаляем ненужные знаки из текста
+    for (int i = 0; i < RemoveSigns.Length; i++)
+    {
+        str = str.Replace(RemoveSigns[i], string.Empty);// методом Replace, где первый аргумент - встречающиеся знаки,
+                                                     // а второй на что заменять. В нашем случае - это пусто
+    }
+    return str.Split(" "); //возвращение массива с использованием символа пробела в качестве разделителя
+}
+
