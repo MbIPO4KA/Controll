@@ -49,3 +49,22 @@ string[] RemoveSignsText(string str) // загружаем строку
     return str.Split(" "); //возвращение массива с использованием символа пробела в качестве разделителя
 }
 
+/// <summary>
+/// Поиск слов по их длинне
+/// </summary>
+/// <param name="str">Массив слов</param>
+/// <param name="wordLength">максимальное значение знаков</param>
+/// <returns>Массив найденых слов</returns>
+string[] SelectionText(string[] str, int maxLength)
+{
+    string newString = string.Empty; // создадим пустую строку и заполним 
+    for (int i = 0; i < str.Length; i++) // для всех индексов
+    {
+        if (str[i].Length <= maxLength)  // если количество букв не превышает 
+        {
+            newString = newString + str[i] + " "; // набираем слова по условию задачи
+        }
+    }    
+    return newString.Split(" ");//возвращение массива с использованием символа пробела в качестве разделителя
+    
+}
