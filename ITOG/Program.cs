@@ -68,3 +68,8 @@ string[] SelectionText(string[] str, int maxLength)
     return newString.Split(" ");//возвращение массива с использованием символа пробела в качестве разделителя
     
 }
+
+Console.WriteLine("Найденые слова:");
+string[] rezultText = SelectionText(RemoveSignsText(newText), maxLength);
+Console.Write($"[{string.Join(',', rezultText)}]");
+Console.WriteLine();
